@@ -15,28 +15,28 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@shinkai_network/shinkai-artifacts": ["libs/shinkai-artifacts/src/index.ts"],
-      "@shinkai_network/shinkai-i18n": ["libs/shinkai-i18n/src/index.ts"],
-      "@shinkai_network/shinkai-message-ts/*": [
-        "libs/shinkai-message-ts/src/*.ts"
+      "@darvis_network/darvis-artifacts": ["libs/darvis-artifacts/src/index.ts"],
+      "@darvis_network/darvis-i18n": ["libs/darvis-i18n/src/index.ts"],
+      "@darvis_network/darvis-message-ts/*": [
+        "libs/darvis-message-ts/src/*.ts"
       ],
-      "@shinkai_network/shinkai-node-state": [
-        "libs/shinkai-node-state/src/index.ts"
+      "@darvis_network/darvis-node-state": [
+        "libs/darvis-node-state/src/index.ts"
       ],
-      "@shinkai_network/shinkai-node-state/*": [
-        "libs/shinkai-node-state/src/*.ts"
+      "@darvis_network/darvis-node-state/*": [
+        "libs/darvis-node-state/src/*.ts"
       ],
-      "@shinkai_network/shinkai-ui": ["libs/shinkai-ui/src/index.ts"],
-      "@shinkai_network/shinkai-ui/assets": [
-        "libs/shinkai-ui/src/assets/index.ts"
+      "@darvis_network/darvis-ui": ["libs/darvis-ui/src/index.ts"],
+      "@darvis_network/darvis-ui/assets": [
+        "libs/darvis-ui/src/assets/index.ts"
       ],
-      "@shinkai_network/shinkai-ui/helpers": [
-        "libs/shinkai-ui/src/helpers/index.ts"
+      "@darvis_network/darvis-ui/helpers": [
+        "libs/darvis-ui/src/helpers/index.ts"
       ],
-      "@shinkai_network/shinkai-ui/hooks": [
-        "libs/shinkai-ui/src/hooks/index.ts"
+      "@darvis_network/darvis-ui/hooks": [
+        "libs/darvis-ui/src/hooks/index.ts"
       ],
-      "@shinkai_network/shinkai-ui/utils": ["libs/shinkai-ui/src/utils.ts"]
+      "@darvis_network/darvis-ui/utils": ["libs/darvis-ui/src/utils.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

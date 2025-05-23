@@ -1,3 +1,5 @@
+import { __awaiter } from 'tslib';
+
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import sodium from 'libsodium-wrappers-sumo';
@@ -56,25 +58,22 @@ export async function decryptMessageWithPassphrase(
     sodium.crypto_pwhash_ALG_DEFAULT,
   );
 
-  const nonce = sodium.from_hex(content.slice(32, 56));
-  const ciphertext = sodium.from_hex(content.slice(56));
+  const nonce = sodium.from_hex(
+    content.slice(32, 32 + sodium.crypto_aead_chacha20poly1305_IETF_NPUBBYTES * 2),
+  );
+  const ciphertext = sodium.from_hex(
+    content.slice(32 + sodium.crypto_aead_chacha20poly1305_IETF_NPUBBYTES * 2),
+  );
 
   try {
-    const plaintext_bytes = sodium.crypto_aead_chacha20poly1305_ietf_decrypt(
+    return sodium.crypto_aead_chacha20poly1305_ietf_decrypt(
       null,
       ciphertext,
       null,
       nonce,
       key,
     );
-    const decrypted_body = sodium.to_string(plaintext_bytes);
-    return decrypted_body;
-  } catch (e) {
-    if (e instanceof Error) {
-      console.error(e.message);
-      throw new Error('Decryption failure!: ' + e.message);
-    } else {
-      throw new Error('Decryption failure!');
-    }
+  } catch {
+    return null;
   }
 }
